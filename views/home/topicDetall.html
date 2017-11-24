@@ -1,0 +1,307 @@
+<% include ../layout/header.html%>
+
+<!-- 这是回复页面 -->
+
+<div id="main">
+  <div id="sidebar">
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">作者</span>
+    </div>
+    <div class="inner">
+      <div class="user_card">
+  <div>
+    <a class="user_avatar" href="/user/Mesea">
+      <img src="https://avatars2.githubusercontent.com/u/24809247?v=3&amp;s=120" title="Mesea">
+    </a>
+    <span class="user_name"><a class="dark" href="/user/Mesea"><%=data.uid.uname%></a></span>
+
+    <div class="board clearfix">
+      <div class="floor">
+        <span class="big"><%="积分:"+data.uid. gold%> </span>
+      </div>
+    </div>
+    <div class="space clearfix"></div>
+    <span class="signature">
+        <%=data.uid.desc%>
+    </span>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  
+    
+<div class="panel">
+  <div class="inner ads">
+
+    
+      
+      <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&amp;utm_medium=content_pic_pc&amp;utm_campaign=multicloud&amp;utm_content=gift&amp;ytag=cnodejs" target="_blank" class="banner sponsor_outlink" data-label="ucloud-banner">
+        <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="https://alinode.aliyun.com/?ref=cnode" target="_blank" class="banner sponsor_outlink" data-label="alinode">
+        <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+      </a>
+    
+  </div>
+</div>
+
+  
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">作者其它话题</span>
+    </div>
+    <div class="inner">
+      
+      <p>无</p>
+      
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">无人回复的话题</span>
+    </div>
+    <div class="inner">
+      
+      <ul class="unstyled">
+        <li>
+  <div><a class="dark topic_title" href="/topic/59547a430d52eaae21401510" title="国内node做后台的公司多吗">国内node做后台的公司多吗</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/59539620ff46b8a921c94737" title="nodejs 爬虫如何解决需要微信登录的问题 。。">nodejs 爬虫如何解决需要微信登录的问题 。。</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/595203a9984e31dd458c146d" title="关于用Express中间件去请求微信access_token和ticket时，第二次请求发不出去">关于用Express中间件去请求微信access_token和ticket时，第二次请求发不出去</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/5951c390ff46b8a921c9465a" title="node+express+mongoose一个小demo">node+express+mongoose一个小demo</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/595079959c7ee4c245b6b356" title="类似于百度网盘的点击右键上传文件的问题">类似于百度网盘的点击右键上传文件的问题</a>
+  </div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="panel">
+    <div class="header topic_header">
+      <span class="topic_full_title">
+
+        
+
+
+      <%= data.topicname%>
+      </span>
+      <div class="changes">
+        <span>
+          发布于 几秒前
+        </span>
+        <span>
+          作者 <a href="/user/Mesea"><%=data.uid.uname%></a>
+        </span>
+        <span>
+          1 次浏览
+        </span>
+        
+        
+          <span> 来自 客户端测试</span>
+        
+
+        
+          <input class="span-common span-success pull-right collect_btn" type="submit" value="收藏" action="collect">
+        
+
+      </div>
+      
+      <div id="manage_topic">
+        
+          
+          <a href="/topic/59547b87984e31dd458c156c/edit">
+            <i class="fa fa-lg fa-pencil-square-o" title="编辑"></i></a>
+          <a href="javascript:;" data-id="59547b87984e31dd458c156c" class="delete_topic_btn">
+             <i class="fa fa-lg fa-trash" title="删除"></i></a>
+          
+        
+
+
+      </div>
+      
+    </div>
+    <div class="inner topic">
+
+      <div class="topic_content">
+
+
+      <div class="markdown-text">
+            <!-- <%-data.content%> -->
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="panel">
+
+
+
+
+    <div class="header">
+      <span class="col_fade">3 回复</span>
+    </div>
+
+
+
+<!-- 话题内容遍历 -->
+
+
+    <%replydata.forEach(function(item){%>
+    <div class="cell reply_area reply_item
+  " reply_id="5955afff984e31dd458c15d4" reply_to_id="" id="5955afff984e31dd458c15d4">
+  <div class="author_content">
+    <a href="/user/Mesea" class="user_avatar">
+      <img src="https://avatars2.githubusercontent.com/u/24809247?v=3&amp;s=120" title="Mesea"></a>
+
+    <div class="user_info">
+      <a class="dark reply_author" href="/user/Mesea"><%=item.uid.uname%></a>
+      <a class="reply_time" href="#5955afff984e31dd458c15d4">1楼•2 分钟前</a>
+      
+        <span class="reply_by_author"> 作者</span>
+      
+    </div>
+    <div class="user_action">
+      <span>
+        <i class="fa up_btn   fa-thumbs-o-up invisible" title="喜欢"></i>
+        <span class="up-count">
+          
+        </span>
+      </span>
+      
+      <a href="/reply/5955afff984e31dd458c15d4/edit" class="edit_reply_btn">
+        <i class="fa fa-pencil-square-o" title="编辑"></i>
+      </a>
+      <a href="javascript:void(0);" class="delete_reply_btn">
+        <i class="fa fa-trash" title="删除"></i>
+      </a>
+      
+      <span>
+        
+          <i class="fa fa-reply reply2_btn" title="回复"></i>
+        
+      </span>
+    </div>
+  </div>
+  <div class="reply_content from-Mesea">
+
+
+
+
+    <div class="markdown-text">
+        <%=item.content%>
+    </div>
+
+
+
+
+
+  </div>
+  <div class="clearfix">
+    <div class="reply2_area">
+      
+      <form class="reply2_form" action="/5955aff1984e31dd458c15d3/reply" method="post">
+      
+        <input type="hidden" name="reply_id" value="5955afff984e31dd458c15d4">
+
+        <div class="markdown_editor in_editor">
+          <div class="markdown_in_editor">
+          
+
+          </div>
+
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<!-- 话题内容遍历结束 -->
+<%})%>
+
+
+
+  </div>
+  
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">添加回复</span>
+    </div>
+    <div class="inner reply">
+
+      <form id="reply_form" action="/topic/reply" method="post">
+
+    <!-- tid就是当前话题ID -->
+      <input type="hidden" name="tid" id="_csrf" value="<%=data._id%>">
+      <%  console.log(data._id)%>
+        <div class="markdown_editor in_editor">
+          <div class="markdown_in_editor">
+
+          <!-- 回复话题 -->
+            <textarea class="editor" name="content" rows="8">
+              
+            </textarea>
+
+            <div class="editor_buttons">
+              <input class="span-primary submit_btn" type="submit" data-loading-text="回复中.." value="回复">
+            </div>
+          </div>
+
+        </div>
+
+        
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+<div class="replies_history" style="display: none;">
+  <div class="inner_content"></div>
+  <div class="anchor"></div>
+</div>
+
+<!-- 预览模态对话框 -->
+<div class="modal fade" id="preview-modal">
+  <div class="modal-body" style="max-height: initial;">
+    <img src="" alt="点击内容或者外部自动关闭图片预览" id="preview-image">
+  </div>
+</div>
+
+
+
+</div>
+
+<% include ../layout/footer.html%>

@@ -1,0 +1,229 @@
+<% include ../layout/header.html%>
+
+
+
+<div id="main">
+  <div id="sidebar">
+
+  <div class="panel">
+    
+    <div class="header">
+      <span class="col_fade">个人信息</span>
+    </div>
+    <div class="inner">
+      <div class="user_card">
+  <div>
+    <a class="user_avatar" href="/user/Mesea">
+     <!--  <img src="https://avatars2.githubusercontent.com/u/24809247?v=3&amp;s=120" title="Mesea"> -->
+    </a>
+   <!--  <span class="user_name"><a class="dark" href="/user/Mesea">Mesea</a></span>
+ -->
+    <div class="board clearfix">
+     <!--  <div class="floor">
+        <span class="big">积分: 5 </span>
+      </div> -->
+    </div>
+    <div class="space clearfix"></div>
+   <!--  <span class="signature">
+      
+    </span> -->
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    $('.follow_btn').click(function () {
+      var $me = $(this);
+      var action = $me.attr('action');
+      var params = {
+        follow_id: '58d1fad52c8bf2a836456249',
+        _csrf: 'fnQOuZkK--yIqSoaaTMaSxsl6fvjg48odlhk'
+      };
+      $.post('/user/' + action, params, function (data) {
+        if (data.status === 'success') {
+          var $btns = $('.follow_btn');
+          if (action === 'follow') {
+            $btns.html('取消关注');
+            $btns.attr('action', 'un_follow');
+          } else {
+            $btns.html('加入关注');
+            $btns.attr('action', 'follow');
+          }
+          $btns.toggleClass('btn-success');
+        }
+      }, 'json');
+    });
+  });
+</script>
+
+
+    </div>
+    
+  </div>
+
+  
+  <div class="panel">
+    <div class="inner">
+      <a href="/topic/create" id="create_topic_btn">
+        <span class="span-success">发布话题</span>
+      </a>
+    </div>
+  </div>
+  
+
+  
+    
+<div class="panel">
+  <div class="inner ads">
+
+    
+      
+      <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&amp;utm_medium=content_pic_pc&amp;utm_campaign=multicloud&amp;utm_content=gift&amp;ytag=cnodejs" target="_blank" class="banner sponsor_outlink" data-label="ucloud-banner">
+        <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="https://alinode.aliyun.com/?ref=cnode" target="_blank" class="banner sponsor_outlink" data-label="alinode">
+        <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+      </a>
+    
+  </div>
+</div>
+
+  
+
+  
+
+  
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">友情社区</span>
+    </div>
+    <div class="inner">
+      <ol class="friendship-community">
+        <li>
+          <a href="https://ruby-china.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/ruby-china-20150529.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://golangtc.com/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/golangtc-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://phphub.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/phphub-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="https://testerhome.com/" target="_blank">
+            <img src="//dn-cnode.qbox.me/FjLUc7IJ2--DqS706etPQ1EGajxK">
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">客户端二维码</span>
+    </div>
+    <div class="inner cnode-app-download">
+      <img width="200" src="//dn-cnode.qbox.me/FtG0YVgQ6iginiLpf9W4_ShjiLfU">
+      <br>
+      <a href="https://github.com/soliury/noder-react-native" target="_blank">客户端源码地址</a>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="content">
+  <div class="panel">
+    <div class="header">
+      <ul class="breadcrumb">
+        <li><a href="/">主页</a><span class="divider">/</span></li>
+        <li class="active">设置</li>
+      </ul>
+    </div>
+    <div class="inner">
+      
+      
+
+
+<!-- 表单区域 -->
+
+
+ 
+     <!--  <%if(errMsg.length){%> -->
+        <!-- 全局res.locals对象errMsg是数组 -->
+       <!--  <div class="alert alert-danger fade in">
+          <%=errMsg[0]%>
+        </div> -->
+      <!-- <%}%> -->
+
+
+      <form id="setting_form" class="form-horizontal" 
+      action="/users/doreg" method="post">
+
+
+
+        <div class="control-group">
+          <label class="control-label" for="name">用户名</label>
+
+          <div class="controls">
+            <input class="input-xlarge" id="name" name="uname" size="30" type="text"  placeholder="请求入用户名">
+          </div>
+        </div>
+
+          <div class="control-group">
+          <label class="control-label" for="name">密码</label>
+
+          <div class="controls">
+            <input class="input-xlarge" id="name" name="upwd" size="30" type="password"   placeholder="用户密码">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="signature">个性签名</label>
+
+          <div class="controls">
+            <textarea class="input-xlarge" id="signature" name="desc" size="30"></textarea>
+          </div>
+        </div>
+  
+
+
+
+  <!--       <input type="hidden" name="_csrf" value="fnQOuZkKyIqSoaaTMaSxsl6fvjg48odlhk"> -->
+
+        <div class="form-actions">
+          <input type="submit" class="span-primary submit_btn" data-loading-text="注册中.." value="确定注册">
+        </div>
+
+      </form>
+
+
+
+      <!-- 表单结束 -->
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+<!-- 引入公共尾部 -->
+<% include ../layout/footer.html%>
